@@ -18,15 +18,24 @@ export default new Router({
     children: [{
       name: 'contacts',
       path: 'contacts',
-      component: Contacts
+      component: Contacts,
+      meta: {
+        title: 'Contatos'
+      }
     }, {
       name: 'details',
       path: 'details',
-      component: Details
+      component: Details,
+      meta: {
+        title: 'Detalhes'
+      }
     }, {
       name: 'user',
       path: 'user',
-      component: User
+      component: User,
+      meta: {
+        title: 'Usuário'
+      }
     }]
   }]
 })

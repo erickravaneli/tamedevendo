@@ -1,5 +1,5 @@
 <template>
-<v-bottom-nav absolute :value="true" :active.sync="active" color="transparent">
+<v-bottom-nav app fixed :value="true" :active.sync="active" color="transparent">
   <v-btn flat color="teal" to="contacts" value="contacts">
     <span>Contatos</span>
     <v-icon>people</v-icon>
