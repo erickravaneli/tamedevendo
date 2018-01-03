@@ -1,6 +1,6 @@
 <template>
 <div>
-  contacts
+  user
 </div>
 </template>
 
