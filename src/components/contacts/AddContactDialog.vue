@@ -13,23 +13,36 @@
       <v-toolbar-title>Adicionar</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn dark flat @click="dialog = false">Salvar</v-btn>
+        <v-btn dark flat @click="addContact">Salvar</v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <v-container fill-heigth>
-      <v-text-field color="teal" label="Nome"></v-text-field>
-      <v-text-field color="teal" mask="(##) ##### - ####" label="Celular" type="tel"></v-text-field>
-      <v-text-field color="teal" label="Observações"></v-text-field>
+      <v-text-field color="teal" v-model="contact.name" label="Nome"></v-text-field>
+      <v-text-field color="teal" v-model="contact.phone" mask="(##) ##### - ####" label="Celular" type="tel"></v-text-field>
+      <v-text-field color="teal" v-model="contact.comments" label="Observações"></v-text-field>
     </v-container>
   </v-card>
 </v-dialog>
 </template>
 
 <script>
+import {
+  mapActions
+} from 'vuex'
 export default {
   data: () => ({
-    dialog: false
-  })
+    dialog: false,
+    contact: {}
+  }),
+  methods: {
+    ...mapActions(['actionAddContact']),
+    addContact() {
+      this.actionAddContact(this.contact).then(() => {
+        this.dialog = false
+        this.contact = {}
+      })
+    }
+  }
 }
 </script>
 <style>
