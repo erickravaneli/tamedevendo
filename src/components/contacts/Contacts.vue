@@ -1,7 +1,11 @@
 <template>
-<v-container fill-heigth>
+<v-container class="pa-0" fill-heigth>
+  <v-list class="list">
+    <v-list-tile v-for="(contact, index) in contacts" :key="index" @click="">
+      <v-list-tile-content>{{ contact.name }}</v-list-tile-content>
+    </v-list-tile>
+  </v-list>
   <add-contact-dialog></add-contact-dialog>
-  {{ contacts }}
 </v-container>
 </template>
 
@@ -19,3 +23,9 @@ export default {
   }
 }
 </script>
+<style>
+.application .theme--light.list,
+.theme--light .list {
+  background: transparent;
+}
+</style>
