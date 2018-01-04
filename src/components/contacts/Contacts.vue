@@ -1,31 +1,16 @@
 <template>
 <v-container fill-heigth>
-  <transition name="fade" appear>
-    <v-btn id="fab" fixed dark fab bottom right color="teal">
-      <v-icon>add</v-icon>
-    </v-btn>
-  </transition>
+  <add-contact-dialog></add-contact-dialog>
+
 </v-container>
 </template>
 
 <script>
-export default {}
+import AddContactDialog from '@/components/contacts/AddContactDialog.vue'
+
+export default {
+  components: {
+    'add-contact-dialog': AddContactDialog
+  }
+}
 </script>
-<style>
-#fab {
-  bottom: 75px;
-}
-
-.fade-enter {
-  opacity: 0;
-}
-
-.fade-enter-active {
-  transition: opacity 400 linear;
-}
-
-.fade-leave-active {
-  transition: opacity 400 linear;
-  opacity: 0
-}
-</style>
